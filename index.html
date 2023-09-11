@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        font-family: "Poppins", sans-serif;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="javascript.js" defer></script>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="shortcut icon"
+      href="images/icon.png"
+      type="image/x-icon"
+    />
+    <title>Etch-a-Sketch</title>
+  </head>
+  <body>
+    <div class="flex-container">
+      <h1 class="title">Etch-a-Sketch</h1>
+      <h3 class="subtitle">Draw whatever you want!</h3>
+      <div class="mode">Mode: Coloring</div>
+      <div class="main">
+        <div class="controls">
+          <div class="controls-inner">
+            <div id="sliderValue"></div>
+            <input
+              type="range"
+              name="slider"
+              id="sizeSlider"
+              min="2"
+              max="64"
+              value="16"
+              onchange="changeSize(this.value); changeSlider(this);"
+            />
+            <div class="buttons">
+              <button
+                type="button"
+                onclick="changeColor('black')"
+                style="--clr: #39ff14"
+              >
+                <span>Black</span><i></i>
+              </button>
+              <button
+                type="button"
+                onclick="changeColor('white')"
+                style="--clr: #ff44cc"
+              >
+                <span>Eraser</span><i></i>
+              </button>
+              <button
+                type="button"
+                onclick="changeColor('random')"
+                style="--clr: #0ff0fc"
+              >
+                <span>Random</span><i></i>
+              </button>
+              <button
+                type="button"
+                onclick="resetBoard()"
+                style="--clr: #8a2be2"
+              >
+                <span>Reset</span><i></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="board"></div>
+      </div>
+    </div>
+  </body>
+</html>
