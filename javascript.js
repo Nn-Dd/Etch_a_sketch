@@ -37,14 +37,15 @@ function sliderValue(input) {
   });
 }
 
-
 function colorSquare() {
-  let randomColor = "#000000".replace(/0/g,function(){return (~~(Math.random()*16)).toString(16);});
-  
+  let randomColor = "#000000".replace(/0/g, function () {
+    return (~~(Math.random() * 16)).toString(16);
+  });
+
   if (click) {
     if (color === "random") {
-      this.style.backgroundColor = randomColor
-      color_picker.value = randomColor
+      this.style.backgroundColor = randomColor;
+      color_picker.value = randomColor;
     } else {
       this.style.backgroundColor = color;
     }
