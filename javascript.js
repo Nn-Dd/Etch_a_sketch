@@ -23,6 +23,7 @@ createDivs(16);
 
 const sizeSlider = document.getElementById("sizeSlider");
 const initialValue = 16;
+let intervalId;
 
 document.getElementById(
   "sliderValue"
@@ -36,18 +37,23 @@ function sliderValue(input) {
   });
 }
 
+
 function colorSquare() {
+  let randomColor = "#000000".replace(/0/g,function(){return (~~(Math.random()*16)).toString(16);});
+  
   if (click) {
     if (color === "random") {
-      this.style.backgroundColor = `hsl(${Math.random() * 360},100%,50%)`;
+      this.style.backgroundColor = randomColor
+      color_picker.value = randomColor
     } else {
       this.style.backgroundColor = color;
     }
   }
 }
-
+let color_picker = document.getElementById("input-color");
 function changeColor(choice) {
   color = choice;
+  color_picker.value = color;
 }
 
 function changeSize(input) {
@@ -64,7 +70,12 @@ function resetBoard() {
   squares.forEach((div) => (div.style.backgroundColor = "white"));
 }
 document.querySelector("body").addEventListener("click", (e) => {
-  if (e.target.tagName != "BUTTON" && e.target.tagName != "INPUT" && e.target.tagName != "SPAN" && e.target.tagName != "I"){
+  if (
+    e.target.tagName != "BUTTON" &&
+    e.target.tagName != "INPUT" &&
+    e.target.tagName != "SPAN" &&
+    e.target.tagName != "I"
+  ) {
     click = !click;
     if (click) {
       document.querySelector(".mode").textContent = "Mode: Coloring";

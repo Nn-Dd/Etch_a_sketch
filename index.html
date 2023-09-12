@@ -16,11 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="javascript.js" defer></script>
     <link rel="stylesheet" href="styles.css" />
-    <link
-      rel="shortcut icon"
-      href="images/icon.png"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="images/icon.png" type="image/x-icon" />
     <title>Etch-a-Sketch</title>
   </head>
   <body>
@@ -31,6 +27,12 @@
       <div class="main">
         <div class="controls">
           <div class="controls-inner">
+            <input
+              type="color"
+              id="input-color"
+              class="color-picker"
+              onchange="changeColor(this.value)"
+            />
             <div id="sliderValue"></div>
             <input
               type="range"
@@ -44,14 +46,14 @@
             <div class="buttons">
               <button
                 type="button"
-                onclick="changeColor('black')"
+                onclick="changeColor('#000000')"
                 style="--clr: #39ff14"
               >
                 <span>Black</span><i></i>
               </button>
               <button
                 type="button"
-                onclick="changeColor('white')"
+                onclick="changeColor('#FFFFFF')"
                 style="--clr: #ff44cc"
               >
                 <span>Eraser</span><i></i>

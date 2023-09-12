@@ -56,7 +56,7 @@ div#sliderValue{
 }
 .controls-inner {
   width: 15vw;
-height: 40vh;
+height: 45vh;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -79,6 +79,25 @@ height: 40vh;
   padding: 8px;
   margin-top: 15px;
 }
+.color-picker {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  width: 100px;
+  height: 100px;
+  border: none;
+  cursor: pointer;
+}
+.color-picker::-webkit-color-swatch {
+  border-radius: 50%;
+  border: 3px solid #000000;
+}
+.color-picker::-moz-color-swatch {
+  border-radius: 50%;
+  border: 3px solid #000000;
+}
+
 button {
   position: relative;
   background: #444;
@@ -181,7 +200,7 @@ button:hover i::after {
 
 .board {
   display: grid;
-  width: 500px;
-  height: 500px;
+  width: 600px;
+  height: 600px;
   border: 1px solid black;
 }
